@@ -33,14 +33,11 @@
     font-size: 1.0625rem;
     line-height: 1.65;
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .page {
-    max-width: 34rem;
-    padding: 3rem 1.5rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 3.5rem;
     text-align: center;
   }
 
@@ -68,15 +65,17 @@
 
   .links {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 0.6rem;
     padding: 0;
     margin: 0;
     list-style: none;
+    overflow-x: auto;
   }
   .links a {
     display: inline-block;
+    white-space: nowrap;
     font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
     font-size: 0.8125rem;
     letter-spacing: 0.02em;
@@ -99,6 +98,32 @@
   .links .at { color: var(--muted); }
   .links a:hover .at { color: var(--accent); }
 
+  .bios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3rem;
+    margin-top: 2.75rem;
+    text-align: left;
+  }
+  .bios h2 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin: 0 0 0.9rem;
+  }
+  .bios p {
+    margin: 0;
+    font-size: 0.96rem;
+    line-height: 1.66;
+  }
+  .bios em { font-style: italic; }
+  @media (max-width: 680px) {
+    .bios { grid-template-columns: 1fr; gap: 2.25rem 0; }
+    .links { flex-wrap: wrap; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
   }
@@ -117,6 +142,47 @@
     <li><a href="https://x.com/navidmehrdad59"><span class="at">x.com/</span>navidmehrdad59</a></li>
     <li><a href="https://substack.com/@navidmehrdad"><span class="at">substack/</span>@navidmehrdad</a></li>
   </ul>
+
+  <section class="bios">
+    <div>
+      <h2>Artificial Intelligence</h2>
+      <p>
+        Navid Mehrdad is an engineer and applied researcher working on agentic AI, retrieval,
+        and large-scale machine learning systems, with a background in information theory and
+        production AI. He holds a Ph.D. in electrical engineering from Stanford University and
+        a later Ph.D. in political science from Yale University, and has held engineering and
+        research positions at Qualcomm (Senior Engineer, wireless systems; five granted U.S.
+        patents), Allston Trading, Shell (reinforcement learning for renewables), Walmart
+        Global Tech (Principal Machine Learning Engineer, Search &amp; Relevance, where his
+        retrieval and ranking systems contributed over $150M in annual business impact), and
+        Salesforce Product AI (Principal Member of Technical Staff, agentic runtimes and
+        evaluation infrastructure). His work spans dense retrieval and session-aware search
+        architectures, LLM-as-judge evaluation frameworks, and open-source research on
+        coordination in multi-agent AI systems, publications in network information theory,
+        SIGIR retrieval, patented session-context embedding method. His current work centers
+        on orchestration planning, verification, and failure recovery in production agentic
+        systems.
+      </p>
+    </div>
+    <div>
+      <h2>Political Science</h2>
+      <p>
+        Navid Mehrdad is a political scientist working on democratization and autocratization
+        in historical perspective, with archival and quantitative methods. He holds a Ph.D. in
+        political science from Yale University and an earlier Ph.D. in electrical engineering
+        from Stanford University, and has held research and teaching positions at Princeton
+        (Niehaus Fellow in Regional Political Economy), Columbia (Lecturer; later Visiting
+        Scholar at the Harriman Institute), the Higher School of Economics (Associate
+        Professor of Political Science), the European University Institute, and Yale (Henry
+        Hart Rice Faculty Fellow). His first book, <em>Leading from the Periphery and Network
+        Collective Action</em> (Cambridge University Press, 2017), received the American
+        Political Science Association Political Networks Section&rsquo;s best book award. His
+        present book draws on fieldwork and archival collection in Ankara and Istanbul,
+        Beijing, Cairo, Moscow and St.&nbsp;Petersburg, and Tehran, and on sources in eight
+        languages.
+      </p>
+    </div>
+  </section>
 </main>
 
 </body>
